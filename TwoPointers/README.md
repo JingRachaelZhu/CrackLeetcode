@@ -1,1 +1,1 @@
-# Two pointers soulution in python3
+# Two pointers solution in python3
