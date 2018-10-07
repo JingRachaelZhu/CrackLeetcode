@@ -1,1 +1,1 @@
-# Backtracking soulution in python3
+# Backtracking solution in python3
