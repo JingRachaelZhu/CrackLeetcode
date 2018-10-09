@@ -12,10 +12,10 @@ class Solution:
         """
         return self._reverse(head)
     
-    def _reverse(self,node,pre=None):    #带pre默认参数
-        if not node:
+    def _reverse(self,node,pre=None):   #带pre默认参数
+        if not node:                    #Terminal Condition
             return pre
-        tmp =node.next
+        tmp =node.next                  #Internal Logic
         node.next =pre
       
-        return self._reverse(tmp,node)
+        return self._reverse(tmp,node)  #Recursion Logic
