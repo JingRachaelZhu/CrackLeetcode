@@ -21,7 +21,8 @@ Time: O(n), Space: O(1)
 
 **idea 2** (Less efficient than idea 1,cuz need more memory and time )   
 `recursion`  
-1. terminal condition: if current node is None,return None
-2. recursive model : Similiar with `idea 1`, change last 2 statements into calling the function itself(apply recursion)  
+1. terminal condition: if current node is None,return None  
+2. internal logic: the latter `node.next` points to the `pre` node
+3. recursive logic: Similiar with `idea 1`, change last 2 statements into calling the function itself(apply recursion),regard `next node` as `cur`,`current node` as `pre` 
 
 Time: O(n), Space: O(n) 
