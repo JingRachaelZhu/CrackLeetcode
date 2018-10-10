@@ -15,7 +15,7 @@ Output: 2->3->6->7->1->5->4->NULL
 
 ## Ideas  
 **idea 1**   
-`iteration`  
+`normal iteration`  
 To solve it, divide the list into two lists,one is odd list,the other is even list.Then combine this two together to create the final list.  
 1. First,initialize the `odd` to `head` and `even` to the `head.next` of the list.mark a `evenhead` for combination.  
 2. while iterating the list,the `odd` will always points to the next odd position`second.next` and the `even` will point to the next even position `even.next.next`    
