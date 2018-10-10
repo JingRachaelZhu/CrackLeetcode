@@ -8,10 +8,10 @@ Given 1->2->3->4, you should return the list as 2->1->4->3.
 ## Ideas  
 **idea 1**   
 `iteration`  
-It is a sub-reverse problem.Every two adjacent nodes exchange place with each other.Set a node `pre` in front of the head: `pre->1->2->3->4`,change to `pre->2->1->4->3`   
-1. First,initialize the `pre` to `0` and `cur` to the `pre`    
+It is a sub-reverse problem.Every two adjacent nodes exchange place with each other.Set a node `dummy` in front of the head: `dummy->1->2->3->4`,change to `dummy->2->1->4->3`   
+1. First,initialize `cur` to the `dummy`    
 2. while iterating the list,first points to the first node of two,second points to the second one.(the terminal condintion is there are no more than two nodes)  
-3. To change the order,need to modify 3 things.`pre->1->2` change to `pre->2->1`  
+3. To change the order,need to modify 3 things.`dummy->1->2` change to `dummy->2->1`  
 4. After finishing the invertion, get `cur` reach to the node ahead of the next two nodes  
 
 **NOTICE**    
