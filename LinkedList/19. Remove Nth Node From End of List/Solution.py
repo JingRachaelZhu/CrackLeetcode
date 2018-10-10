@@ -17,7 +17,7 @@ class Solution(object):
         pre.next =head
         fast =pre
         slow =pre
-        for i in xrange(n):             #move n+1 forwad, keep n+1 gap of two vals
+        for i in xrange(n):             #move n forwad, keep n gap of two vals
             fast =fast.next
             
         while fast.next:
