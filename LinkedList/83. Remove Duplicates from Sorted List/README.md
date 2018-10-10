@@ -12,7 +12,7 @@ Output: 1->2->3
 ## Ideas  
 **idea 1**   
 `normal iteration`  
-1. First,initialize the `cur` to the `head` of the list    
+1. First,initialize the `cur` to the `head` of the list.(no need pre-node for ` head` ,cuz delete the duplicate one,the `head` will not be the target node )    
 2. Then iterating the list,if two adjacent nodes have the same value, the first node linked to the next node of second node.`cur.next` =`cur.next.next`     
 
 **NOTICE**   
