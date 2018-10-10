@@ -8,7 +8,7 @@ Output: 5->4->3->2->1->NULL
 
 ## Ideas  
 **idea 1**   
-`iteration`  
+`iteration reverse`  
 1. First,initialize the `pre` to None and `cur` to the `head` of the list.  
 2. while iterating the list,the `pre` will always points to the former node before current node and the `cur.next` will point to the pre,which completes the invertion btn the two continuous node.  
 3. After finishing the invertion,the `pre` will point to the current node and the `cur` will point to the next node.And do the same time above again until the `cur` reaches the end of the list(last node.next is None)
