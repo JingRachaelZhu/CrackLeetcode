@@ -20,7 +20,7 @@ Could you do this in one pass?
 `Fast/slow pointer`  
 It is a `Fast/slow ponter` problem. the similar way as [`876. Middle of the Linked List`](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/876.%20Middle%20of%20the%20Linked%20List)    
 1. First,define a `pre` in ahead of the head of the list,in case the target node is the head node. `fast` and `slow` point to `pre`        
-2. Move the `fast` --> n+1 places forward, to maintain a gap of n between `fast` and `slow`    
+2. Move the `fast` --> n+1 places forward, to maintain a gap of n+1 between `fast` and `slow`    
 3. Then move both two at the same speed until the `fast` reaches the end of the list,the `slow` will be n+1 places behind - just the right spot for it to be able to skip the next node.   
 
 **NOTICE**    
