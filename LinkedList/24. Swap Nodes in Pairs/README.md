@@ -7,7 +7,7 @@ Given 1->2->3->4, you should return the list as 2->1->4->3.
 
 ## Ideas  
 **idea 1**   
-`iteration`  
+`iteration reverse`   
 It is a sub-reverse problem.Every two adjacent nodes exchange place with each other.Set a node `dummy` in front of the head: `dummy->1->2->3->4`,change to `dummy->2->1->4->3`   
 1. First,initialize `cur` to the `dummy`    
 2. while iterating the list,first points to the first node of two,second points to the second one.(the terminal condintion is there are no more than two nodes)  
