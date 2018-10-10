@@ -22,7 +22,7 @@ To use two vals to track the duplicate and form new list
 
 **NOTICE**    
 * **If `cur` next to `pre`**: means no duplicate currently,move forward(`pre` reaches to next node)      
-* **If `cur` not next to `pre`**: means `cur` is duplicate,so assign `cur.next` to `pre.next`in order to skip dups.**Attention:** the current `pre.next` may not be the final result.May change to another node in the next loop  
+* **If `cur` not next to `pre`**: means `cur` is duplicate,so assign `cur.next` to `pre.next`in order to skip dups.**Attention:** It just changed the `pre.next`,the current`pre` position didnt change.In addition,The current `pre.next` may not be the final result.May change to another node in the next loop  
 
 Time: O(n), Space: O(1)      
 
