@@ -11,7 +11,7 @@ Output: 1->2->3
 
 ## Ideas  
 **idea 1**   
-`normal iterating`  
+`normal iteration`  
 1. First,initialize the `cur` to the `head` of the list    
 2. Then iterating the list,if two adjacent nodes have the same value, the first node linked to the next node of second node.`cur.next` =`cur.next.next`     
 
