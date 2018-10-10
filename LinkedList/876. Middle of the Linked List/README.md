@@ -12,7 +12,7 @@ Output: Node 4 from this list (Serialization: [4,5,6])
 
 ## Ideas  
 **idea 1**   
-`normal iterating the list 1.5 times`  
+`normal iteration the list 1.5 times`  
 1. First,get the length of the linked list by iterating the whole lined list.  
 2. Then define a val called `cur` that pointing to the head of the linked list, then iterating the linked list until the `cur` reaches the mid position.  
 
