@@ -29,5 +29,6 @@ Time: O(n), Space: O(1)
 **idea 2** (Less efficient than idea 1,cuz need more memory and time )   
 `iteration` with mark 
 1. The only diff with `idea 1` is to add a mark `isDuplicate` for checking duplicate without estimating the location relationship between `cur` and `pre`  
+2. Dont forget to reset the mark `isDuplicate` as default value `False`in the end of each loop.  
 
 Time: O(n), Space: O(1) 
