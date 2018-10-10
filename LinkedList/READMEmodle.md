@@ -3,7 +3,7 @@ Given a
 
 **Example 1:**    
 
-Given 
+Input&Output 
 
 ## Ideas  
 **idea 1**   
