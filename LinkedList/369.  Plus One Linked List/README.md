@@ -44,3 +44,7 @@ Use `NonNine` to track the last non 9 digit position. If all digits are 9, add 1
 3. Finally, set all the rest 9s to 0.   
 
 Time: O(n), Space: O(1) 
+
+**idea 4**   
+`recursion`  
+to be done
