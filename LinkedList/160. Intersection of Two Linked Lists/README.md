@@ -38,9 +38,11 @@ Time: O(n), Space: O(1)
 `iteration`   
 Using `A` linked `B`,`B` linked `A` to fill up the diff of the two lengths.When the two `cur1` and `cur2` meet each other,it is right on the target node.(cuz the two vals go through the same distance when they meet) 
 eg.  2    4  
-      +2    +2(right here when the  `cur1` and `cur2` meet)  
-     4    2
-
+      +2    +2(right here when the  `cur1` and `cur2` meet)    
+     4    2  
+     
+**NOTICE** 
+* **Goal**:Cover the diff of two lenghths
 
 Time: O(n), Space: O(1) 
 
