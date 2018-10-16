@@ -22,10 +22,10 @@ It is much easier than [369. Plus One Linked List](https://github.com/JingRachae
 * **No need to reverse**:eg. `res.next` =ListNode(0),`res` =`res.next`
 * **Don‘t forget to handle the last `carry`**: if `carry`, add 1 ahed of the result.       
 
-Time: O(n), Space: O(1)      
+Time: O(n), Space: O(n)(create new list)      
 
 **idea 2** (more clear and simple version,similar logic)  
 `iteration`
 The most smart tip is the `carry` part.`carry` will store the sum for l1 and l2(or either one).then in the end of each loop, `carry` =`carry` //10 ,means the carry for next addition.No need to make up `0` any more,since `carry` will be either `0` or `1`(always valid).  
 
-Time: O(n), Space: O(1) 
+Time: O(n), Space: O(n)(create new list)
