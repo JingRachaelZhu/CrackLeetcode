@@ -19,8 +19,8 @@ It is much easier than [369. Plus One Linked List](https://github.com/JingRachae
 3. Finally,if the carry is `1`, add one more `1` ahead of the `res` list.   
 
 **NOTICE**    
-* **no need to reverse**:eg. `res.next` =ListNode(0),`res` =`res.next`
-* **Dont forget to handle the last `carry`**: if `carry`, add 1 ahed of the result.       
+* **No need to reverse**:eg. `res.next` =ListNode(0),`res` =`res.next`
+* **Don‘t forget to handle the last `carry`**: if `carry`, add 1 ahed of the result.       
 
 Time: O(n), Space: O(1)      
 
