@@ -7,10 +7,10 @@ Write a program to find the node at which the intersection of two singly linked 
 For example, the following two linked lists:
 
 A:          a1 → a2
-                   ↘
-                     c1 → c2 → c3
-                   ↗            
-B:     b1 → b2 → b3
+                 ↓   
+                 c1 → c2 → c3  
+                 ↑               
+B:     b1 → b2 → b3  
 begin to intersect at node c1.  
 
 **Notes:**
@@ -23,9 +23,9 @@ begin to intersect at node c1.
 ## Ideas  
 **idea 1**   
 `iteration`  
-It is similar to [19. Remove Nth Node From End of List](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/19.%20Remove%20Nth%20Node%20From%20End%20of%20List).The longer one needs to reach specific positon so that it will remain the same node as the short one.  
+It is similar to [19. Remove Nth Node From End of List](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/19.%20Remove%20Nth%20Node%20From%20End%20of%20List).The longer one needs to reach specific positon so that it will remain the same distance away from the target node as the short one when moving forward.  
 1. First, compare the lenghths of two lists  
-2. Then,deal with the longer list, make `cur(1/2)` reach the specific position to keep the same space as the short one while moving forward.(The same distance away from the target node) 
+2. Then,deal with the longer list, make `cur(1/2)` reach the specific position to keep the same pace as the short one while moving forward.(The same distance away from the target node) 
 3. Finally, compare each node of two list
 
 **NOTICE**    
