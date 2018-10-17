@@ -10,14 +10,13 @@ Output: 1->1->2->3->4->4
 ## Ideas  
 **idea 1**   
 `iteration`  
-It is a basic merge problem .Need to compare nodes of two lists before merge them together.
-For example, if `cur1.val` >= `cur2.val`, `res.next` store `cur2` ,then `res` and `cur2` moves forward(`res.next`,`cur2.next`)  
-
+It is a basic merge problem .Need to compare nodes of two lists every time before merge them together.
+For example, if `cur1.val` >= `cur2.val`, `res.next` store `cur2` ,then `res` and `cur2` moves forward(`res.next`,`cur2.next`) 
 
 **NOTICE**    
 * **edge case**: when both lists is None,return None.When either is None,return the other one.        
 
-Time: O(n), Space: O(n)      
+Time: O(n), Space: O(n)(the space of the new array depends on the space of input lists)      
 
 **idea 2** ( more elegant)   
 `recursion`   
