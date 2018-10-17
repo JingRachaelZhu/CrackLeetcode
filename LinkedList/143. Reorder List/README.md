@@ -19,7 +19,7 @@ Given 1->2->3->4->5, reorder it to 1->5->2->4->3.
 It is similar to [234. Palindrome Linked List ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/234.%20Palindrome%20Linked%20List) use fast/slow to find the mid node and reverse the second half of the list.Then, add nodes as the problem requests.   
 
 **NOTICE**      
-* **Edge case**: when list id None or only have oneor two node,return    
+* **Edge case**: when list is `None` or only have one or two node,return    
 * **After finding mid node(`slow`)**:The `slow.next` will be the beginning of the `sec_half`.`slow` will be the last node of the result,so `slow.next` =`None`.           
 
 Time: O(n), Space: O(1)      
