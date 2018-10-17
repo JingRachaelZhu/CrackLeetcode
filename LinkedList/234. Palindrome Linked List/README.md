@@ -1,27 +1,34 @@
-# 21. Merge Two Sorted Lists  
+# 234. Palindrome Linked List  
 
-Merge two sorted linked lists and return it as a new list. The new list should be made by splicing together the nodes of the first two lists.(in order)  
+Given a singly linked list, determine if it is a palindrome.   
 
 **Example 1:**  
 
-Input: 1->2->4, 1->3->4
-Output: 1->1->2->3->4->4  
+Input: 1->2  
+Output: false  
+
+**Example 2:**  
+
+Input: 1->2->2->1  
+Output: true  
+
+**Follow up:**
+Could you do it in O(n) time and O(1) space?    
 
 ## Ideas  
 **idea 1**   
-`iteration`  
-It is a basic merge problem .Need to compare nodes of two lists before merge them together.
-For example, if `cur1.val` >= `cur2.val`, `res.next` store `cur2` ,then `res` and `cur2` moves forward(`res.next`,`cur2.next`)  
-
+`iteration` (reverse the first half) 
+Because of the feature of palindrome, devide the list into two halves and compare the nodes of the two halves (one is reversed).  
 
 **NOTICE**    
-* **edge case**: when both lists is None,return None.When either is None,return the other one.        
+* **Edge case**: when list id None or only have one node,return True(it's palindrome)  
+* **When comparing**:If the list have **odd** num of nodes,the first half should compare with the second half which starts with **mid+1** node(`slow` =`slow.next`)       
 
-Time: O(n), Space: O(n)      
+Time: O(n), Space: O(1)      
 
-**idea 2** ( more elegant version)   
-`recursion`   
-The same logic as `idea 1` while code looks more elegant.  
+**idea 2**(more simple than `idea 1`,no deal with the odd-num-nodes list)       
+`iteration` (reverse the second half)  
+The same logic as `idea 1` while no special handling for odd-num-nodes list.    
 
-Time: O(n), Space: O(n) 
+Time: O(n), Space: O(1) 
 
