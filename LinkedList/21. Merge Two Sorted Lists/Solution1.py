@@ -6,11 +6,11 @@
 
 class Solution(object):
     def mergeTwoLists(self, l1, l2):
-        """
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        """
+#         """
+#         :type l1: ListNode
+#         :type l2: ListNode
+#         :rtype: ListNode
+#         """
         if not l1 and not l2:   #edge case
             return None
         res =ListNode(0)
@@ -34,5 +34,4 @@ class Solution(object):
             res.next =cur1
         
               
-        return dummy.next
-        
+        return dummy.nex
