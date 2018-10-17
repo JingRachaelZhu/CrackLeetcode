@@ -6,10 +6,10 @@ Write a program to find the node at which the intersection of two singly linked 
 
 For example, the following two linked lists:
 
-A:          a1 → a2
-                 ↓   
-                 c1 → c2 → c3  
-                 ↑               
+A: ---------a1 → a2  
+---------------↓   
+-------------- c1 → c2 → c3  
+---------------↑               
 B:     b1 → b2 → b3  
 begin to intersect at node c1.  
 
@@ -37,9 +37,10 @@ Time: O(n), Space: O(1)
 **idea 2** ( more tricky version)   
 `iteration`   
 Using `A` linked `B`,`B` linked `A` to fill up the diff of the two lengths.When the two `cur1` and `cur2` meet each other,it is right on the target node.(cuz the two vals go through the same distance when they meet) 
-eg.  2    4  
-      +2    +2(right here when the  `cur1` and `cur2` meet)    
-     4    2  
+eg.  
+---2 -----4    
+----+2----+2(right here when the  `cur1` and `cur2` meet)      
+---4-----2  
      
 **NOTICE** 
 * **Goal**:Cover the diff of two lenghths
