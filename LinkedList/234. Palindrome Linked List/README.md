@@ -22,7 +22,7 @@ Could you do it in O(n) time and O(1) space?
 Because of the feature of palindrome, divide the list into two halves and compare the nodes of the two halves (one is reversed).  
 
 **NOTICE**      
-* **Edge case**: when list id None or only have one node,return True(it's palindrome)  
+* **Edge case**: when list is `None` or only have one node,return True(it's palindrome)  
 * **When comparing**:If the list have **odd** num of nodes,the first half should compare with the second half which starts with **mid+1** node(`slow` =`slow.next`)         
 
 Time: O(n), Space: O(1)(if use stack,space complexity will be O(n))        
