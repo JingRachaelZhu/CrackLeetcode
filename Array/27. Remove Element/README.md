@@ -26,11 +26,11 @@ It doesn't matter what values are set beyond the returned length.
 
 ## Ideas  
 **idea 1**(reassign)    
-Since It doesn't matter what you leave beyond the returned length,it's OK to reassign the value of the list from beginning . while iterating the whole list,if the vale of the item is not equal to `val`,then assign this value to num[ct]      
+Since It doesn't matter what you leave beyond the returned length,it's OK to reassign the value of the list from beginning . while iterating the whole list,if the vale of the item is not equal to `val`,then assign this value to `num[ct]`      
 
 **NOTICE**      
 * **in place algorithm(O(1))**:`.remove()`is O(n) funtion ,if it is inside a for loop , the overall time complexity will be O(n^2).So don't do that way.  
-* **Read topic description carefully**:It only requests to return the num of target items and **The order of elements can be changed. It doesn't matter what you leave beyond the new length.**It tends to ask me to **manipulate the list (swapping or reassigning values)** instead of getting rid of partial values (removing or deleting values).   
+* **Read topic description carefully**:It only requests to return the num of target items and **The order of elements can be changed. It doesn't matter what you leave beyond the new length.** It tends to ask me to **manipulate the list (swapping or reassigning values)** instead of getting rid of partial values (removing or deleting values).   
           
 Time: O(n), Space: O(1)  
 
