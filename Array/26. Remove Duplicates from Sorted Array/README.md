@@ -1,22 +1,27 @@
-# 143. Reorder List  
+# 26. Remove Duplicates from Sorted Array  
 
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…  
+Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
 
-You may **not** modify the values in the list's nodes, only nodes itself may be changed.     
+**Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.**      
 
 **Example 1:**  
 
-Given 1->2->3->4, reorder it to 1->4->2->3.  
+Given nums = [1,1,2],
+
+Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively.
+
+**It doesn't matter what you leave beyond the returned length.**   
 
 **Example 2:**  
 
-Given 1->2->3->4->5, reorder it to 1->5->2->4->3.    
+Given nums = [0,0,1,1,1,2,2,3,3,4],
+
+Your function should return length = 5, with the first five elements of nums being modified to 0, 1, 2, 3, and 4 respectively.    
 
 ## Ideas  
 **idea 1**   
-`iteration` (find mid,reverse the second half)   
-It is similar to [234. Palindrome Linked List ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/234.%20Palindrome%20Linked%20List) use fast/slow to find the mid node and reverse the second half of the list.Then, add nodes as the problem requests.   
+`iteration` (reassign)   
+It is similar to [27. Remove Element ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/Array/27.%20Remove%20Element). If     
 
 **NOTICE**      
 * **Edge case**: when list id None or only have oneor two node,return    
