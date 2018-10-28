@@ -33,12 +33,12 @@ It is similiar to [26. Remove Duplicates from Sorted Array](https://github.com/J
 Time: O(n), Space: O(1)      
 
 **idea 2** (another thinking)  
-`iteration` (reassign)
+`iteration` (reassign)   
 It will compare one item with the item 2 slots ahead.So copy the first two and start comparision from the third item.If one item is larger than the item 2 slots ahead,it means this item at most appears twice ,then keep it.
 
 
 **NOTICE**      
-* **Compare with the updated item**: When comparing the `num` with the item ahead, the item ahead should be the updated one(`nums[ct-2]`) rather than the original one in the array.        
+* **Compare with the updated item**: When comparing the `num` with the item ahead, the item ahead should be **the updated one(`nums[ct-2]`)** rather than the original one in the array.        
            
 
 Time: O(n), Space: O(1) 
