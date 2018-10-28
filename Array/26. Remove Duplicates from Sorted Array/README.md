@@ -29,5 +29,7 @@ It is similar to [27. Remove Element ](https://github.com/JingRachaelZhu/CrackLe
 
 Time: O(n), Space: O(1)      
 
+**idea 2** similiar as pb 80.
+
 
 
