@@ -26,7 +26,7 @@ It doesn't matter what values are set beyond the returned length.
 
 ## Ideas  
 **idea 1**(reassign)    
-Since It doesn't matter what you leave beyond the returned length,it's OK to reassign the value of the list from beginning . while iterating the whole list,if the vale of the item is not equal to `val`,then assign this value to `num[ct]`      
+Since It doesn't matter what you leave beyond the returned length,it's OK to reassign the value of the list from beginning . while iterating the whole list,if the vale of the item is not equal to `val`,then assign this value to `num[ct]`（`ct` starts from 0）      
 
 **NOTICE**      
 * **in place algorithm(O(1))**:`.remove()`is O(n) funtion ,if it is inside a for loop , the overall time complexity will be O(n^2).So don't do that way.  
