@@ -1,26 +1,34 @@
-# 143. Reorder List  
+# 80. Remove Duplicates from Sorted Array II
 
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…  
+Given a sorted array nums, remove the duplicates in-place such that duplicates appeared at most twice and return the new length.
 
-You may **not** modify the values in the list's nodes, only nodes itself may be changed.     
+Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.  
+   
 
 **Example 1:**  
 
-Given 1->2->3->4, reorder it to 1->4->2->3.  
+Given nums = [1,1,1,2,2,3],
+
+Your function should return length = 5, with the first five elements of nums being 1, 1, 2, 2 and 3 respectively.  
+
+It doesn't matter what you leave beyond the returned length.  
 
 **Example 2:**  
 
-Given 1->2->3->4->5, reorder it to 1->5->2->4->3.    
+Given nums = [0,0,1,1,1,1,2,3,3],
+
+Your function should return length = 7, with the first seven elements of nums being modified to 0, 0, 1, 1, 2, 3 and 3 respectively.  
+
+It doesn't matter what values are set beyond the returned length.   
 
 ## Ideas  
 **idea 1**   
-`iteration` (find mid,reverse the second half)   
-It is similar to [234. Palindrome Linked List ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/234.%20Palindrome%20Linked%20List) use fast/slow to find the mid node and reverse the second half of the list.Then, add nodes as the problem requests.   
+`iteration` (reassign)   
+It is similiar to [26. Remove Duplicates from Sorted Array](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/Array/26.%20Remove%20Duplicates%20from%20Sorted%20Array) with the num of dups is 2.So when the num of dups is lees than 2,the `ct` still keep tracking the location as it does when the comparing values are different.  
 
 **NOTICE**      
-* **Edge case**: when list id None or only have oneor two node,return    
-* **After finding mid node(`slow`)**:The `slow.next` will be the beginning of the `sec_half`.`slow` will be the last node of the result,so `slow.next` =`None`.           
+* **Edge case**: when `nums` is None,return 0      
+* **Set `mark` to record th num of dups**: conclude that if the allowed dups is n, the mark should less than n while keep others the same as this pb does.           
 
 Time: O(n), Space: O(1)      
 
