@@ -29,7 +29,7 @@ It is similar to [27. Remove Element ](https://github.com/JingRachaelZhu/CrackLe
 
 Time: O(n), Space: O(1)      
 
-**idea 2** similiar as pb 80.
+**idea 2** similiar as [pb 80](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/Array/80.%20Remove%20Duplicates%20from%20Sorted%20Array%20II).
 
 
 
