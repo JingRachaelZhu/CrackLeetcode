@@ -21,11 +21,11 @@ Your function should return length = 5, with the first five elements of nums bei
 ## Ideas  
 **idea 1**   
 `iteration` (reassign)   
-It is similar to [27. Remove Element ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/Array/27.%20Remove%20Element). SOTRED ARRAY is the key.Since it's sorted, should compare with pairs each time. Once find the target value,assign it to `nums[ct]`(`ct` starts from `1`, which is different from `pb27. Remove Element`).       
+It is similar to [27. Remove Element ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/Array/27.%20Remove%20Element). SOTRED ARRAY is the key.Since it's sorted, should compare with pairs each time. Once find the target value,use `ct` to keep track of the position and update the array.        
 
 **NOTICE**      
 * **Edge case**: when `nums` is None,return 0      
-* **`ct` starts from `1`**:Since the aim of this pb is to remove the dups in sorted array.When find the dup of first item ,reassign next different value to the dup without operating first item .So always keep thr first item.          
+* **`ct` starts from `1`**:Since the aim of this pb is to remove the dups in sorted array. So always keep thr first item.          
 
 Time: O(n), Space: O(1)      
 
