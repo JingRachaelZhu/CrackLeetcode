@@ -23,8 +23,8 @@ It doesn't matter what values are set beyond the returned length.
 
 ## Ideas  
 **idea 1**   
-`iteration` (reassign)   
-It is similiar to [26. Remove Duplicates from Sorted Array](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/Array/26.%20Remove%20Duplicates%20from%20Sorted%20Array) with the num of dups is 2.So when the num of dups is lees than 2, keep the value ,which is the same as when the comparing values are different.  
+`iteration` (reassign)(compare & mark)   
+It is similiar to [26. Remove Duplicates from Sorted Array](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/Array/26.%20Remove%20Duplicates%20from%20Sorted%20Array) with the num of dups is 2.So when the num of dups is lees than 2, keep the value ,which is the same as when the comparing two adjacent values are different.  
 
 **NOTICE**      
 * **Edge case**: when `nums` is None,return 0      
@@ -33,12 +33,12 @@ It is similiar to [26. Remove Duplicates from Sorted Array](https://github.com/J
 Time: O(n), Space: O(1)      
 
 **idea 2** (another thinking)  
-`iteration` (reassign)   
+`iteration` (reassign)(just compare)
 It will compare one item with the item 2 slots ahead.So copy the first two and start comparision from the third item.If one item is larger than the item 2 slots ahead,it means this item at most appears twice ,then keep it.
 
 
 **NOTICE**      
-* **Compare with the updated item**: When comparing the `num` with the item ahead, the item ahead should be **the updated one(`nums[ct-2]`)** rather than the original one in the array.        
+* **Compare with the updated item**: When comparing the `num` with the item ahead, the item ahead should be the updated one(`nums[ct-2]`) rather than the original one in the array.        
            
 
 Time: O(n), Space: O(1) 

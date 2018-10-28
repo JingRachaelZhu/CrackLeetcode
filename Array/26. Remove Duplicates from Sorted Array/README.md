@@ -20,7 +20,7 @@ Your function should return length = 5, with the first five elements of nums bei
 
 ## Ideas  
 **idea 1**   
-`iteration` (reassign)   
+`iteration` (reassign)(compare&mark(mark<1,so no need mark here))   
 It is similar to [27. Remove Element ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/Array/27.%20Remove%20Element). SOTRED ARRAY is the key.Since it's sorted, should compare with pairs each time. Once find the target value,use `ct` to keep track of the position and update the array.        
 
 **NOTICE**      
