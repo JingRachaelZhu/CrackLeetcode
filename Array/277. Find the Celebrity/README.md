@@ -11,16 +11,16 @@ Note: There will be exactly one celebrity if he/she is in the party. Return the 
 ## Ideas  
 **idea 1**(Brute force)    
 `iteration`   
-It does as the topic described. First,initilize every item of a new array `res`(length is `n`) to `True` ,Selecting candidate in order from `0` to `n-1`.When selected `i` as candidate,iterating all other people`j`,calling funtion `knows(i,j)`to see if i kns j.If not celebrity,set its related value to `False`.Finally,return its label if have a celebrity. 
+It does as the topic described. First,initilize every item of a new array `res`(length is `n`) to `True` ,which keep track of the state of every person,assuming candidate in order from `0` to `n-1`.When selected `i` as candidate,iterating all other people`j`,calling funtion `knows(i,j)`to see if i kns j.If not celebrity,set its related value to `False`.Finally,return its label if have a celebrity. 
 
 **NOTICE**      
-* **Edge case**: when `n` is None ,return `0`     
+* **Edge case**: when `n` is None ,return `-1`     
 * **Each time calling funtion knows(i,j)**: `i` should compare with other all people except itself.If `i` kn `j`,`i` can't be the celebriity,if `i` doesn't kn `j`,`j` can't be the celebrity.So each time after calling `knows(i,j)`,should discard one person.      
 
 Time: O(n^2)(nested loop), Space: O(n)(new array) 
 
 **Improved solution**   
-**use key1:celebrity kns noone** to select a candidate. It doesn't need a new array but a mark `cel`to keep track of the funtion `knows()` result.Just to mark`cel` `False` if `knows(i,j)` is `True` and turn to next candidate.Finally,if `cel` is `True`,means the candidate kns noone.  
+**use key1:celebrity kns noone** to select a candidate. It doesn't need a new array but a mark `cel`to keep track of the funtion `knows()` result.Just to mark`cel` `False` if `knows(i,j)` is `True` and turn to next person.Finally,if `cel` is `True`after iterating all other people,means the candidate kns noone.  
 Then use **key2:everyone kns celebrity** to check if all others knows this candidate.   
 
 Time: O(n^2)(nested loop), Space: O(1)(constant space)
@@ -31,11 +31,11 @@ Creating a queue to store all labels. When iterating the `Queue`,each time calli
 
 **NOTICE**      
 * **Queue tail and head**: it depends.could be the head(array) as head--pop(0) and the tail(array) as tail--append(item) .Or the tail(array) as head--pop() and the head(array) as tail--insert(0,item).Both of two ways have the same time complexity:one is O(n),one is O(1).             
-* **Check the candidate**:Since first step just compares two persons each time, it's necessary to check thecandidate at last.  
+* **Check the candidate**:Since first step just compares two persons each time, it's necessary to check the candidate at last.  
 
 Time: O(n^2), Space: O(1) 
 
-**improved solution**(Stack,similar to Queue solution,but more fast(push&pop both O(1))          
+**improved solution**(Stack,similar to Queue solution,but more faster(push&pop both O(1))          
 It's similiar to `Queue solution`.The difference is after first time pop two persons , just pop one person per time to compare with former candidate.When the stack is empty, need to call knows(i,j) to find the final candidate.Finally,check the candidate as well.  
 
 **NOTICE**      
@@ -45,7 +45,7 @@ It's similiar to `Queue solution`.The difference is after first time pop two per
 
 Time: O(n), Space: O(1)
 
-**idea 3**(more elegant solution)     
+**idea 3**(more elegant solution,no stack or queue)**final optimal solution**     
 `iteration`    
 The Key is every time after calling funtion `knows(i,j)`,it can descard one person.So Once find `i` kns `j`,set `j` as candidate and compare `j` with latter people.At last ,check the candidate.  
 
