@@ -4,20 +4,20 @@ Given an array, rotate the array to the right by k steps, where k is non-negativ
 
 **Example 1:**  
 
-Input: [1,2,3,4,5,6,7] and k = 3
-Output: [5,6,7,1,2,3,4]
-Explanation:
-rotate 1 steps to the right: [7,1,2,3,4,5,6]
-rotate 2 steps to the right: [6,7,1,2,3,4,5]
-rotate 3 steps to the right: [5,6,7,1,2,3,4]   
+Input: [1,2,3,4,5,6,7] and k = 3   
+Output: [5,6,7,1,2,3,4]   
+Explanation:   
+rotate 1 steps to the right: [7,1,2,3,4,5,6]   
+rotate 2 steps to the right: [6,7,1,2,3,4,5]   
+rotate 3 steps to the right: [5,6,7,1,2,3,4]      
 
 **Example 2:**  
 
-Input: [-1,-100,3,99] and k = 2
-Output: [3,99,-1,-100]
-Explanation: 
-rotate 1 steps to the right: [99,-1,-100,3]
-rotate 2 steps to the right: [3,99,-1,-100]   
+Input: [-1,-100,3,99] and k = 2   
+Output: [3,99,-1,-100]   
+Explanation:    
+rotate 1 steps to the right: [99,-1,-100,3]   
+rotate 2 steps to the right: [3,99,-1,-100]      
 
 **Note:**
 
@@ -31,7 +31,7 @@ It does as the topic described.First of all,need to evaluate the value of `k`,th
   
 **NOTICE**      
 * **Edge case**: when `nums` is `None` ,return     
-* **Evaluate the value of `k`**:If `k` id greater than the lengh of array,reassign thr remainder to `k`,which is the exact num of the steps for operation.              
+* **Evaluate the value of `k`**:If `k` is greater than the lengh of array,reassign thr remainder to `k`,which is the exact num of the steps for operation.              
 
 Time: O(n), Space: O(1)      
 
