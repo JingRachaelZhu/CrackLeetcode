@@ -46,7 +46,7 @@ It mainly devides the whole array into two part in term of k. and put second par
 Time: O(n), Space: O(1) 
 
 **idea 3**(more simple)   
-`Reverse 3 times`            
+`Reverse 3 times`(all,then,0~k-1,k~end)            
 It uses a helper funtion reverse() to reverse a array.First reverse the whole array,then reverse the items between `0~k-1` and reverse the rest items.
   
 **NOTICE**              
