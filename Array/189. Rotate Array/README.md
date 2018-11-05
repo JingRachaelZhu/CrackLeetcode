@@ -26,17 +26,17 @@ Could you do it in-place with O(1) extra space?
 
 ## Ideas  
 **idea 1**   
-`iteration`(straightforward)    
-It does as the topic described.First of all,need to evaluate the value of `k`,the effective part is the remainder.Then pop item fro the end and insert it at the head `k` times.   
+`straightforward`        
+It does as the topic described.First of all,need to evaluate the value of `k`,the effective part is the remainder.Then pop item from the end and insert it at the head `k` times.   
   
 **NOTICE**      
 * **Edge case**: when `nums` is `None` ,return     
 * **Evaluate the value of `k`**:If `k` is greater than the lengh of array,reassign thr remainder to `k`,which is the exact num of the steps for operation.              
 
-Time: O(n), Space: O(1)      
+Time: O(n^2), Space: O(1)      
 
 **idea 2**(more simple)   
-`iteration`(Slice assignment)       
+`Slice assignment`            
 It mainly devides the whole array into two part in term of k. and put second part ahead of first part to join them together to form the result.
   
 **NOTICE**      
@@ -45,3 +45,11 @@ It mainly devides the whole array into two part in term of k. and put second par
 
 Time: O(n), Space: O(1) 
 
+**idea 3**(more simple)   
+`Reverse 3 times`            
+It uses a helper funtion reverse() to reverse a array.First reverse the whole array,then reverse the items between `0~k-1` and reverse the rest items.
+  
+**NOTICE**              
+* **Understanding**: the rotate part is `k~end`, need to put this part ahead of  the array.So first reverse all to take the latter part in front.Then reverse the `0~k-1`(the original `k~end` part) and the rest parts independently to get the result.            
+
+Time: O(n), Space: O(1)
