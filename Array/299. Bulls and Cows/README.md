@@ -26,25 +26,26 @@ Explanation: The 1st 1 in friend's guess is a bull, the 2nd or 3rd 1 is a cow.
 
 ## Ideas  
 **idea 1**      
-`two pass`
+`two pass`    
 First pass for `bulls`: If the items match while iterating two strings,`bulls` add 1 .   
-Second pass for  `cows`: create two lists to count the num of each chars appears in `secret` and `guess`,respectively.Then, cows will be added by the smaller num of given nums in both lists.   
+Second pass for  `cows`: create two lists to count the num of each chars appears in `secret` and `guess`,respectively.Then, cows will be added by the smaller num of the given nums in both lists.   
 
 **NOTICE**      
    
-* **When counting**:The counts do not include the bulls num.
-* **How to caculate cows?**:Key:the smaller num of counts is the target num.Think about it in realwold problem.         
+* **When counting**:The counts do not include the bulls num so it is inside the `else` part.
+* **How to caculate cows?**:Key:the smaller num of counts is the target num.Think about it in realwold problem.     
+* **return format**: return string.Python has a printf()-like facility to put together a string.The `%` operator takes a printf-type format string on the left (**`%d` int, `%s` string, `%f`/`%g` floating point**), and the matching values in a tuple on the right,eg:'%dA%sB' % (3,str(3))     
 
 Time: O(n), Space: O(1)(independent with n)   
 
 **idea 2**(optimal solution of `idea 1`)      
-`one pass`
-The main diff is the `else` part.It use only one array to record both count from both `secret` and `guess`.   
+`one pass`     
+The main diff is the `else` part.It use only one array to record counts from both `secret` and `guess`.`Cows` adds 1 when num from `secret` was already seen in `guess` or vice versa.      
 
 **NOTICE**      
    
-* **When counting**:The counts do not include the bulls num.
-* **How to caculate cows?**:Key:the smaller num of counts is the target num.Think about it in realwold problem.         
+* **remenber to change type**:The type of `secret[i]` is `str`. So invert `str` into `int`when using`count[secret[i]]`.           
+* **How to caculate cows?**:Key:Increment `cows` when either number from `secret` was already seen in `guest` or vice versa.              
 
 Time: O(n), Space: O(1)(independent with n)        
 
