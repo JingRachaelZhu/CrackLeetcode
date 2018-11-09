@@ -41,7 +41,7 @@ It mainly devides the whole array into two part in term of k. and put second par
   
 **NOTICE**      
 * **Time complexity**: Get slice is O(n).       
-* **use num[:]**: `nums[:]=nums[len(nums)-k:]+nums[:len(nums)-k]` can't be weitten as: `nums =nums[len(nums)-k:]+nums[:len(nums)-k]` .Because the former statement is **changing the old value of nums** while the latter one is **changing its reference to a new address**. 
+* **use num[:] as slice assignmwent**: `nums[:]=nums[len(nums)-k:]+nums[:len(nums)-k]` can't be weitten as: `nums =nums[len(nums)-k:]+nums[:len(nums)-k]` .Because the former statement is **changing the old value of nums** while the latter one is **changing its reference to a new address**. 
 
 
 Time: O(n), Space: O(1) 
