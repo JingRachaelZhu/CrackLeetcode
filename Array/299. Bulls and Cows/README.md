@@ -1,28 +1,52 @@
-# 143. Reorder List  
+# 299. Bulls and Cows     
 
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…  
+You are playing the following Bulls and Cows game with your friend: You write down a number and ask your friend to guess what the number is. Each time your friend makes a guess, you provide a hint that indicates how many digits in said guess match your secret number exactly in both digit and position (called "bulls") and how many digits match the secret number but locate in the wrong position (called "cows"). Your friend will use successive guesses and hints to eventually derive the secret number.
 
-You may **not** modify the values in the list's nodes, only nodes itself may be changed.     
+Write a function to return a hint according to the secret number and friend's guess, use A to indicate the bulls and B to indicate the cows. 
 
-**Example 1:**  
+Please note that both secret number and friend's guess may contain duplicate digits.       
 
-Given 1->2->3->4, reorder it to 1->4->2->3.  
+**Example 1:**   
+
+Input: secret = "1807", guess = "7810"  
+
+Output: "1A3B"  
+
+Explanation: 1 bull and 3 cows. The bull is 8, the cows are 0, 1 and 7.    
 
 **Example 2:**  
 
-Given 1->2->3->4->5, reorder it to 1->5->2->4->3.    
+Input: secret = "1123", guess = "0111"   
+
+Output: "1A1B"  
+
+Explanation: The 1st 1 in friend's guess is a bull, the 2nd or 3rd 1 is a cow.   
+
+**Note**: You may assume that the secret number and your friend's guess only contain digits, and their lengths are always equal.      
 
 ## Ideas  
-**idea 1**   
-`iteration` (find mid,reverse the second half)   
-It is similar to [234. Palindrome Linked List ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/234.%20Palindrome%20Linked%20List) use fast/slow to find the mid node and reverse the second half of the list.Then, add nodes as the problem requests.   
+**idea 1**      
+`two pass`
+First pass for `bulls`: If the items match while iterating two strings,`bulls` add 1 .   
+Second pass for  `cows`: create two lists to count the num of each chars appears in `secret` and `guess`,respectively.Then, cows will be added by the smaller num of given nums in both lists.   
 
 **NOTICE**      
-* **Edge case**: when list id None or only have oneor two node,return    
-* **After finding mid node(`slow`)**:The `slow.next` will be the beginning of the `sec_half`.`slow` will be the last node of the result,so `slow.next` =`None`.           
+   
+* **When counting**:The counts do not include the bulls num.
+* **How to caculate cows?**:Key:the smaller num of counts is the target num.Think about it in realwold problem.         
 
-Time: O(n), Space: O(1)      
+Time: O(n), Space: O(1)(independent with n)   
+
+**idea 2**(optimal solution of `idea 1`)      
+`one pass`
+The main diff is the `else` part.It use only one array to record both count from both `secret` and `guess`.   
+
+**NOTICE**      
+   
+* **When counting**:The counts do not include the bulls num.
+* **How to caculate cows?**:Key:the smaller num of counts is the target num.Think about it in realwold problem.         
+
+Time: O(n), Space: O(1)(independent with n)        
 
 
 
