@@ -13,11 +13,9 @@ class Solution:
             if secret[i] == guess[i]:
                 bulls +=1
             else:
-                if count[int(secret[i])] <0:cows +=1
+                if count[int(secret[i])] <0:cows +=1     #notice: invert str into int
                 if count[int(guess[i])] >0:cows +=1 
                 count[int(secret[i])] +=1
                 count[int(guess[i])] -=1
-        
-        
         
         return '%dA%dB' % (bulls, cows)
