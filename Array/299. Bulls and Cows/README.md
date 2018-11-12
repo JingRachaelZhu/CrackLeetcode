@@ -40,7 +40,7 @@ Time: O(n), Space: O(1)(independent with n)
 
 **idea 2**(optimal solution of `idea 1`)      
 `one pass`     
-The main diff is the `else` part.It use only one array to record counts from both `secret` and `guess`.`Cows` adds 1 when num from `secret` was already seen in `guess` or vice versa.      
+The main diff is the `else` part.It use only one array to record counts from both `secret` and `guess` while `idea 1` uses two array to store counts independently.`Cows` adds 1 when num from `secret` was already seen in `guess` or vice versa.      
 
 **NOTICE**      
    

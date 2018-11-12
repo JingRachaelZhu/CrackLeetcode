@@ -5,6 +5,7 @@ class Solution:
         :type guess: str
         :rtype: str
         """
+        #One pass
         bulls =0
         cows =0
         count =[0 for i in range(10)]
