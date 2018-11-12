@@ -1,28 +1,26 @@
-# 143. Reorder List  
+# 134. Gas Station  
 
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…  
-
-You may **not** modify the values in the list's nodes, only nodes itself may be changed.     
-
-**Example 1:**  
-
-Given 1->2->3->4, reorder it to 1->4->2->3.  
-
-**Example 2:**  
-
-Given 1->2->3->4->5, reorder it to 1->5->2->4->3.    
+**Ideas after observation**:   
+* 1.No matter where it starts, if total gas >= total cost,there must be a solution.(After travel around the circuit,the remaining gas in the tank should be >=0)   
+* 2.If car starts at A and can not reach B. Any station between A and B can not reach B.(B is the first station that A can not reach.)   
 
 ## Ideas  
 **idea 1**   
-`iteration` (find mid,reverse the second half)   
-It is similar to [234. Palindrome Linked List ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/234.%20Palindrome%20Linked%20List) use fast/slow to find the mid node and reverse the second half of the list.Then, add nodes as the problem requests.   
+`One pass`
+Or use two pass to understand it:        
+Use the first pass to determine if we have a solution(property 2 above). Then use the second pass to find out the start positon(use property 1). After you are comfortable with 2 passes, you can absolutely modify it into one pass solution.   
 
-**NOTICE**      
-* **Edge case**: when list id None or only have oneor two node,return    
-* **After finding mid node(`slow`)**:The `slow.next` will be the beginning of the `sec_half`.`slow` will be the last node of the result,so `slow.next` =`None`.           
+**NOTICE**          
+* **`tank`**:It means the current remaining gas in car.When `tank <0`,the car cant reach the `i`th station from where it starts.So the start station should change to `i+1` .   
 
 Time: O(n), Space: O(1)      
 
+**idea 2**   
+`start from end`     
+The basic idea is every time we start from a station, we go as far as possible by increasing end until remaining gas is less than 0. If 'end' finally hits start we know we can travel around from 'start'. If we haven't traveled around, we know we cannot start from this station. Then we check the station before our start station if we can start from this station. Repeat until we have checked all stations.           
 
+**NOTICE**          
+* **Start from the end**: Note there is a little trick that every time we try to find the next start station, we always to back to extend the distance from start to end so that we can check all stations on the circuit. Otherwise, if we move start forward to decrease the distance from start to end, we are likely to end up with only checking part of the circuit. Another trick is we start from the end of the array so as to avoid some corner cases.          
+
+Time: O(n), Space: O(1) 
 
