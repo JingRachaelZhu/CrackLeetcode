@@ -8,7 +8,7 @@ class Solution:
         if not nums:return []
         can1,can2 =0,1
         count1,count2 =0,0
-        for n in nums:
+        for n in nums:                          #select candidates
             if n ==can1:
                 count1 +=1
             elif n ==can2:
@@ -23,7 +23,7 @@ class Solution:
                 count1 -=1
                 count2 -=1
         res =list()
-        for i in (can1,can2):
+        for i in (can1,can2):                   #verify the correctness of candidates
             if nums.count(i) >len(nums)//3:
                 res.append(i)
         
