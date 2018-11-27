@@ -1,5 +1,7 @@
 # 724. Find Pivot Index  
-  
+ 
+ Pivot:枢轴；中心点；
+
 ## Ideas  
 **idea 1**   
 `iteration`    
