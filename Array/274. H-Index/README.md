@@ -1,28 +1,26 @@
-# 143. Reorder List  
-
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…  
-
-You may **not** modify the values in the list's nodes, only nodes itself may be changed.     
-
-**Example 1:**  
-
-Given 1->2->3->4, reorder it to 1->4->2->3.  
-
-**Example 2:**  
-
-Given 1->2->3->4->5, reorder it to 1->5->2->4->3.    
+# 274. H-Index    
 
 ## Ideas  
-**idea 1**   
-`iteration` (find mid,reverse the second half)   
-It is similar to [234. Palindrome Linked List ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/234.%20Palindrome%20Linked%20List) use fast/slow to find the mid node and reverse the second half of the list.Then, add nodes as the problem requests.   
+**idea 1**(optimal)   
+`bucket sort`      
+ the h-index is defined as the number of papers with reference greater than the number. So assume `n` is the total number of papers, if we have `n+1` buckets, number from `0` to `n`, then for any paper with reference corresponding to the index of the bucket, we increment the count for that bucket. The only exception is that for any paper with larger number of reference than n, we put in the `n-th` bucket.    
+
+ Then we iterate from the back to the front of the buckets(since finding the maximum one as the h-index), whenever the total count exceeds or equal to the index of the bucket, meaning that we have the index number of papers that have reference greater than or equal to the index. Which will be our h-index result.   
 
 **NOTICE**      
-* **Edge case**: when list id None or only have oneor two node,return    
-* **After finding mid node(`slow`)**:The `slow.next` will be the beginning of the `sec_half`.`slow` will be the last node of the result,so `slow.next` =`None`.           
+* **convert realworld problem into a algorithm problem**: The key point of this problem : consider different kind of examples and conclude it as a algorithm problem to solve.     
+          
 
-Time: O(n), Space: O(1)      
+Time: O(n), Space: O(n)     
+
+ **idea 2**   
+`sort`     
+sorting the input list in place.Then if the value(`citations[i]`) is equal to or greater than the nums of the values behind it in the list(`length-i`),meaning the `length-i` of N papers has at least `citations[i]` citations each, which is the result answer. 
+   
+**NOTICE**      
+* **convert realworld problem into a algorithm problem**: The key point of this problem : consider different kind of examples and conclude it as a algorithm problem to solve.               
+
+Time: O(nlgn), Space: O(n)   
 
 
 
