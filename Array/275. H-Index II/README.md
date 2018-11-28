@@ -13,7 +13,7 @@ case 2: citations[mid] > len-mid, then it means there are citations[mid] papers 
 case 3: citations[mid] < len-mid, we should continue searching in the right side
 After iteration, it is guaranteed that `right+1` is the one we need to find (i.e. `len-(right+1)` papars have at least `len-(righ+1)` citations)      
 **NOTICE**      
-* **be sorted in ascending order**: need to use binary search to find the result    
+* **mid position**:To prevent overflow,use `mid =left +(right-left)//2` other than `mid=(left+righ)//2`.      
  * **if citations[mid] == length-mid:return length-mid**:It means 'length-mid' of all papers have at least 'citations[mid]' citations each     
 * **Final return**:If it doesn't hit the condition `citations[mid]== (len-mid)`,finally `right` will be on the left of `left`.And the `right+1` wil be the target num we need.so the result is `length-(right+1)`.eg.[0,1,3,4]            
 

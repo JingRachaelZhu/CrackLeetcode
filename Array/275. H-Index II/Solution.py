@@ -10,7 +10,7 @@ class Solution:
         left,right =0,len(citations)-1
         length =len(citations)
         while left <=right:                 #need = if only one element in the array
-            mid =(left+right)//2
+            mid =left +(right-left)//2      #to prevent overflow
             if citations[mid] == length-mid:  #means 'length-mid' of all papers have at least 'citations[mid]' citations each
                 return length-mid 
             elif citations[mid] > length-mid:
