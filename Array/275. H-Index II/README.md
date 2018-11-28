@@ -11,7 +11,8 @@ Could you solve it in logarithmic time complexity?
 case 1: citations[mid] == len-mid, then it means there are citations[mid] papers that have at least citations[mid] citations.
 case 2: citations[mid] > len-mid, then it means there are citations[mid] papers that have moret than citations[mid] citations, so we should continue searching in the left half
 case 3: citations[mid] < len-mid, we should continue searching in the right side
-After iteration, it is guaranteed that `right+1` is the one we need to find (i.e. `len-(right+1)` papars have at least `len-(righ+1)` citations)      
+After iteration, it is guaranteed that `right+1` is the one we need to find (i.e. `len-(right+1)` papars have at least `len-(righ+1)` citations)     
+
 **NOTICE**      
 * **mid position**:To prevent overflow,use `mid =left +(right-left)//2` other than `mid=(left+righ)//2`.      
  * **if citations[mid] == length-mid:return length-mid**:It means 'length-mid' of all papers have at least 'citations[mid]' citations each     
