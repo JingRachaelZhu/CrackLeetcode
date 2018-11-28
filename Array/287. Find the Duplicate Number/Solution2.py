@@ -14,7 +14,7 @@ class Solution:
                 if i <=mid:
                     count +=1
             if count >mid:              #based on Pigeonhole Principle鸽巢原理
-                high =mid
+                high =mid               #include mid not mid-1,bcz i<=mid(count+1 when i = mid)
             else:
                 low =mid+1
         return low

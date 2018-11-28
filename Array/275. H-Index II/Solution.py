@@ -4,7 +4,7 @@ class Solution:
         :type citations: List[int]
         :rtype: int
         """
-        #sort
+        #binary search
         if not citations :return 0			#edge case
         
         left,right =0,len(citations)-1

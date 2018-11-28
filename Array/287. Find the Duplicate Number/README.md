@@ -40,7 +40,7 @@ It is based on binary search.At first the search space is numbers between `1` to
 
 **NOTICE**      
 * **How to come out such idea**:Since the range of items is [1,n] ,only one dup exists.Count the nums of items on half range help to shrink the search range .    
-* **Binary search**: To prevent overflow,`mid =low +(high -low)//2`.when shrink the search range,should include the mid since counts `mid` in at above counting step,so`high=mid`other than `mid-1`.           
+* **Binary search**: To prevent overflow,`mid =low +(high -low)//2`.when shrink the search range,should include the mid since counts `mid` in at above counting step(`if i <=mid:count +=1`),so`high=mid`other than `mid-1`.               
 
 Time: O(logn), Space: O(1)     
 
