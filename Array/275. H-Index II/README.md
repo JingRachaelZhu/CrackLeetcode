@@ -1,28 +1,23 @@
-# 143. Reorder List  
+# 275. H-Index II    
 
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…  
+Follow up:
 
-You may **not** modify the values in the list's nodes, only nodes itself may be changed.     
-
-**Example 1:**  
-
-Given 1->2->3->4, reorder it to 1->4->2->3.  
-
-**Example 2:**  
-
-Given 1->2->3->4->5, reorder it to 1->5->2->4->3.    
+This is a follow up problem to [274.H-Index](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/Array/274.%20H-Index), where citations is now guaranteed to be sorted in ascending order.
+Could you solve it in logarithmic time complexity?       
 
 ## Ideas  
 **idea 1**   
-`iteration` (find mid,reverse the second half)   
-It is similar to [234. Palindrome Linked List ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/234.%20Palindrome%20Linked%20List) use fast/slow to find the mid node and reverse the second half of the list.Then, add nodes as the problem requests.   
-
+`binary search`     
+case 1: citations[mid] == len-mid, then it means there are citations[mid] papers that have at least citations[mid] citations.
+case 2: citations[mid] > len-mid, then it means there are citations[mid] papers that have moret than citations[mid] citations, so we should continue searching in the left half
+case 3: citations[mid] < len-mid, we should continue searching in the right side
+After iteration, it is guaranteed that `right+1` is the one we need to find (i.e. `len-(right+1)` papars have at least `len-(righ+1)` citations)      
 **NOTICE**      
-* **Edge case**: when list id None or only have oneor two node,return    
-* **After finding mid node(`slow`)**:The `slow.next` will be the beginning of the `sec_half`.`slow` will be the last node of the result,so `slow.next` =`None`.           
+* **be sorted in ascending order**: need to use binary search to find the result    
+ * **if citations[mid] == length-mid:return length-mid**:It means 'length-mid' of all papers have at least 'citations[mid]' citations each     
+* **Final return**:If it doesn't hit the condition `citations[mid]== (len-mid)`,finally `right` will be on the left of `left`.And the `right+1` wil be the target num we need.so the result is `length-(right+1)`.eg.[0,1,3,4]            
 
-Time: O(n), Space: O(1)      
+Time: O(logn), Space: O(1)      
 
 
 
