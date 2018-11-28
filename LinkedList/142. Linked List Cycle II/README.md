@@ -1,26 +1,20 @@
 # 142. Linked List Cycle II  
 
-Given an array nums containing n + 1 integers where each integer is between 1 and n (inclusive), prove that at least one duplicate number must exist. Assume that there is only one duplicate number, find the duplicate one.         
+Given a linked list, return the node where the cycle begins. If there is no cycle, return null.          
 
-**Example 1:**  
+**Note:** Do not modify the linked list.  
 
-Input: [1,3,4,2,2]
-Output: 2     
-
-**Example 2:**  
-
-Input: [3,1,3,4,2]    
-Output: 3       
+**Follow up:**
+Can you solve it without using extra space?          
 
 ## Ideas  
 **idea 1**   
 `Two pointers` (fast &slow)  
-   
+It is the same idea as `idea 1` of [287. Find the Duplicate Number](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/Array/287.%20Find%20the%20Duplicate%20Number).Use `Fast&slow` to find the crossing point.Next step is the key --- to find the entry point.
 
 **NOTICE**      
-* **Edge case**: when list id None or only have oneor two node,return    
-* **After finding mid node(`slow`)**:The `slow.next` will be the beginning of the `sec_half`.`slow` will be the last node of the result,so `slow.next` =`None`.           
-
+* **How to find the entry point**:The distance [see detail explain](https://leetcode.com/problems/linked-list-cycle-ii/discuss/44783/Share-my-python-solution-with-detailed-explanation)  
+* **Pay attention**:If `fast` and `slow` both start from `head`,then step2 should reset `fast` to `head`(`fast =head`).If `slow` starts from `head` while `fast` starts from `head.next`,then step2 should either move `slow` one step forward(`slow =slow.next`) while fast still start from `head`(`fast =head`) or `fast` move one step back(`fast =dummy`,where `dummy =ListNode(0)`,`dummy.next =head`).            
 Time: O(n), Space: O(1)      
 
 
