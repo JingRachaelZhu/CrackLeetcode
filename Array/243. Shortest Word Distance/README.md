@@ -1,28 +1,35 @@
-# 143. Reorder List  
+# 243. Shortest Word Distance 
 
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…  
+Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.          
 
-You may **not** modify the values in the list's nodes, only nodes itself may be changed.     
+**Example 1:**    
 
-**Example 1:**  
+Assume that words = ["practice", "makes", "perfect", "coding", "makes"].
 
-Given 1->2->3->4, reorder it to 1->4->2->3.  
+Input: word1 = “coding”, word2 = “practice”
+Output: 3    
 
-**Example 2:**  
+Input: word1 = “coding”, word2 = “practice”
+Output: 3    
 
-Given 1->2->3->4->5, reorder it to 1->5->2->4->3.    
+**Note:**
+You may assume that word1 does not equal to word2, and word1 and word2 are both in the list.       
 
 ## Ideas  
 **idea 1**   
-`iteration` (find mid,reverse the second half)   
-It is similar to [234. Palindrome Linked List ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/234.%20Palindrome%20Linked%20List) use fast/slow to find the mid node and reverse the second half of the list.Then, add nodes as the problem requests.   
+`Two pointer`    
+It use two pointers `a`,`b` to track the position of each word,respectively.Once find both two words,assign the minimun vaue between `dis` and `a-b`(or `b-a`) to `dis` .  
 
 **NOTICE**      
-* **Edge case**: when list id None or only have oneor two node,return    
-* **After finding mid node(`slow`)**:The `slow.next` will be the beginning of the `sec_half`.`slow` will be the last node of the result,so `slow.next` =`None`.           
-
+* **initialize `dis`, `a`and`b`**: No need to initialize `dis` to infinity(`float("inf")`),dis is no greater than the length of the list(`len(words)`).`a` and `b` both set to `-1` or `None`,which are not in the range of index.         
+* **While update `dis`**:Without putting `dis` assigment statement in the buttom of for loop,put it in each `if` statement to prevent using `abs` funtion.                 
 Time: O(n), Space: O(1)      
 
+**idea 2**   
+`One pointer`    
+It use one pointer `index` to track the position of both words.similiar to `idea 1`.         
 
+**NOTICE**               
+* **While update `dis`**:unlike `idea 1`,when finding possible index,need to check it to make sure that 1. found a word before(`index !=-1`) 2.the former found word is not the same as the current found word(`words[index]!=words[i]`).                  
+Time: O(n), Space: O(1)
 
