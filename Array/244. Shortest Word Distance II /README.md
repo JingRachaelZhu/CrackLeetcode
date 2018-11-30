@@ -1,26 +1,27 @@
-# 143. Reorder List  
+# 244. Shortest Word Distance II     
 
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…  
+Design a class which receives a list of words in the **constructor**, and implements a method that takes two words word1 and word2 and return the shortest distance between these two words in the list. Your method will be called repeatedly many times with different parameters.    
 
-You may **not** modify the values in the list's nodes, only nodes itself may be changed.     
+**Example:**   
+Assume that words = ["practice", "makes", "perfect", "coding", "makes"].   
 
-**Example 1:**  
+Input: word1 = “coding”, word2 = “practice”   
+Output: 3   
+Input: word1 = "makes", word2 = "coding"   
+Output: 1    
 
-Given 1->2->3->4, reorder it to 1->4->2->3.  
-
-**Example 2:**  
-
-Given 1->2->3->4->5, reorder it to 1->5->2->4->3.    
+**Note:**
+You may assume that word1 does not equal to word2, and word1 and word2 are both in the list.         
 
 ## Ideas  
 **idea 1**   
-`iteration` (find mid,reverse the second half)   
-It is similar to [234. Palindrome Linked List ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/234.%20Palindrome%20Linked%20List) use fast/slow to find the mid node and reverse the second half of the list.Then, add nodes as the problem requests.   
+`Design`(hashmap)   
+1.When it comes to constructor,recall :dictionary(hashtable/hashmap),list,tuple and set.Use dictionary(hashmap) for this problem.    
+2.Get the values of two lists from word1 and word2,and generate the minmum value of `dis`.It continues until either one list is exhausted.      
 
 **NOTICE**      
-* **Edge case**: when list id None or only have oneor two node,return    
-* **After finding mid node(`slow`)**:The `slow.next` will be the beginning of the `sec_half`.`slow` will be the last node of the result,so `slow.next` =`None`.           
+* **defaultdict**:Don't forget to add `from collections import defaultdict`statement .**defaultdict(list) is used to group a sequence of key-value pairs into a dictionary of lists.**defaultdict(int) is used for counting.     
+* **When generating dis**:The terminal condition for while loop is either one list is exhausted(use `and` ).Compare two value to decide which list next value is from.                
 
 Time: O(n), Space: O(1)      
 
