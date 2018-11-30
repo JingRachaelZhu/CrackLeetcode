@@ -1,28 +1,41 @@
-# 143. Reorder List  
+# 219. Contains Duplicate II        
 
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…  
+Given an array of integers and an integer k, find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and the absolute difference between i and j is at most k.    
 
-You may **not** modify the values in the list's nodes, only nodes itself may be changed.     
+**Example 1:**
 
-**Example 1:**  
+Input: nums = [1,2,3,1], k = 3    
+Output: true       
 
-Given 1->2->3->4, reorder it to 1->4->2->3.  
+**Example 2:**
 
-**Example 2:**  
+Input: nums = [1,0,1,1], k = 1    
+Output: true   
 
-Given 1->2->3->4->5, reorder it to 1->5->2->4->3.    
+**Example 3:**
 
-## Ideas  
+Input: nums = [1,2,3,1,2,3], k = 2    
+Output: false       
+
+## Ideas      
 **idea 1**   
-`iteration` (find mid,reverse the second half)   
-It is similar to [234. Palindrome Linked List ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/234.%20Palindrome%20Linked%20List) use fast/slow to find the mid node and reverse the second half of the list.Then, add nodes as the problem requests.   
+`set`(sliding window)     
+Create a set  and keep the length of set to k+1(sliding window size).Then when adding each latter item in the list,the first item in set will be deleted to mantain the constant window size.Check if the current item is in set,if so ,which means two same items have at most k distance.(`the absolute difference between i and j is at most k`)       
 
 **NOTICE**      
-* **Edge case**: when list id None or only have oneor two node,return    
-* **After finding mid node(`slow`)**:The `slow.next` will be the beginning of the `sec_half`.`slow` will be the last node of the result,so `slow.next` =`None`.           
+* **Use set is enough**:No need for list.Since the problem only need to testify the existence of that condition,so 1 or 2 same items in windows doesn't matter.             
 
-Time: O(n), Space: O(1)      
+Time: O(n), Space: O(1)?(The set space depends on the value of k,which is a constant)
 
+**idea 2**   
+`hashtable`(pythonic)     
+Create a dict and while putting items in it ,check if each two adjacent indices meet the condition(`the absolute difference between i and j is at most k`)    
+   
+
+**NOTICE**      
+* **Convert condition into logical one**:  `find out whether there are two distinct indices i and j in the array such that nums[i] = nums[j] and the absolute difference between i and j is at most k` ,it means the shortest `dis` between two same values(adjacent indices) should not greater than`k`:`if n in dic1 and i-dic1[n] <=k`.         
+* **Think outside the box**:Don't create dict and put all items in it without thinking.            
+
+Time: O(n), Space: O(n) 
 
 

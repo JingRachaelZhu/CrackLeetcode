@@ -9,9 +9,9 @@ class WordDistance:
             self.dict[n] =self.dict.get(n,[])+[i]
         """ 
         from collections import defaultdict   #do'nt forget to import module
-        self.dict =defaultdict(list)          # initialize value to an empty list
+        self.dic =defaultdict(list)          # initialize value to an empty list
         for i,n in enumerate(words):
-            self.dict[n].append(i)            #simpler and faster than an equivalent technique using dict.setdefault()
+            self.dic[n].append(i)            #simpler and faster than an equivalent technique using dict.setdefault()
         
 
     def shortest(self, word1, word2):
@@ -20,8 +20,8 @@ class WordDistance:
         :type word2: str
         :rtype: int
         """
-        l1 =self.dict[word1]
-        l2 =self.dict[word2]
+        l1 =self.dic[word1]
+        l2 =self.dic[word2]
         dis =float("inf")
         length1,length2=len(l1),len(l2)
         i,j =0,0
