@@ -1,26 +1,27 @@
-# 143. Reorder List  
+# 245. Shortest Word Distance III      
 
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…  
+Given a list of words and two words word1 and word2, return the shortest distance between these two words in the list.     
 
-You may **not** modify the values in the list's nodes, only nodes itself may be changed.     
+**word1 and word2 may be the same and they represent two individual words in the list.**     
 
-**Example 1:**  
+**Example:**
+Assume that words = ["practice", "makes", "perfect", "coding", "makes"].    
 
-Given 1->2->3->4, reorder it to 1->4->2->3.  
+Input: word1 = “makes”, word2 = “coding”    
+Output: 1    
+Input: word1 = "makes", word2 = "makes"    
+Output: 3    
 
-**Example 2:**  
-
-Given 1->2->3->4->5, reorder it to 1->5->2->4->3.    
+**Note:**
+You may assume word1 and word2 are both in the list.      
 
 ## Ideas  
 **idea 1**   
-`iteration` (find mid,reverse the second half)   
-It is similar to [234. Palindrome Linked List ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/234.%20Palindrome%20Linked%20List) use fast/slow to find the mid node and reverse the second half of the list.Then, add nodes as the problem requests.   
+`One pointer` (similar to `243.idead 2`)   
+It is the samee idea to `idea 2` of [243. Shortest Word Distance ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/Array/243.%20Shortest%20Word%20Distance)    
 
 **NOTICE**      
-* **Edge case**: when list id None or only have oneor two node,return    
-* **After finding mid node(`slow`)**:The `slow.next` will be the beginning of the `sec_half`.`slow` will be the last node of the result,so `slow.next` =`None`.           
+* **two situations**: Whether this two word are equal or not, use the same idea to solve:The varialbe `a` tracks the position of two words and former `a` represents the position of one word while current `i` represents the another one's position.So `dis =min(dis,i-a)`.                        
 
 Time: O(n), Space: O(1)      
 
