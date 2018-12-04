@@ -19,13 +19,13 @@ Output: false
 
 ## Ideas      
 **idea 1**   
-`set`(sliding window)     
+`sliding window`(set)          
 Create a set  and keep the length of set to k+1(sliding window size).Then when adding each latter item in the list,the first item in set will be deleted to mantain the constant window size.Check if the current item is in set,if so ,which means two same items have at most k distance.(`the absolute difference between i and j is at most k`)       
 
 **NOTICE**      
 * **Use set is enough**:No need for list.Since the problem only need to testify the existence of that condition,so 1 or 2 same items in windows doesn't matter.             
 
-Time: O(n), Space: O(1)?(The set space depends on the value of k,which is a constant)
+Time: O(n), Space: O(1)      
 
 **idea 2**   
 `hashtable`(pythonic)     
