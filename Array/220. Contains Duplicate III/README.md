@@ -26,7 +26,7 @@ It is a upgrade version to [219. Contains Duplicate II ](https://github.com/Jing
 * **Understanding the problem well**:It changes two factors at the same time,which means select the two candidates in a certain range with certain value difference.So use bucket sort to solve it.  
 * **The range of each bucket and num of bucket**:The range of each bucket should be `t+1`,which prevent the bucket mapping `n =nums[i]//(t+1)` invalid when`t ==0`.The nums of bucket is at most k,since the most distance is k.           
 
-Time: O(n), Space: O(n)(**need at most `k` buckets extra space and `n` items extra space S(n)=O(n+k)=O(n)**)      
+Time: O(n), Space: O(n)(**standard bucket sort:need  `m` buckets extra space and `n` items extra space S(n)=O(n+m)**)      
 
 
 
