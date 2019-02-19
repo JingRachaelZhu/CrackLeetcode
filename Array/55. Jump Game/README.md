@@ -15,7 +15,10 @@ Time: O(n)(one pass), Space: O(1)(no extrs space)
 `Greedy`   
 It can be solved by Greedy.At each step,move forward and update the `furthest` position.If the `furthest` is in the front of current index(`furthest < i`),which means we can't reach current index,return `False`.      
 
-Time: O(n)(one pass), Space: O(1)(no extrs space)           
+Time: O(n)(one pass), Space: O(1)(no extrs space)         
+
+
+idea 3 :DP  
   
 
 
