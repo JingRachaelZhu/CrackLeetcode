@@ -1,26 +1,16 @@
-# 143. Reorder List  
+# 42. Trapping Rain Water
 
-Given a singly linked list L: L0→L1→…→Ln-1→Ln,
-reorder it to: L0→Ln→L1→Ln-1→L2→Ln-2→…  
-
-You may **not** modify the values in the list's nodes, only nodes itself may be changed.     
-
-**Example 1:**  
-
-Given 1->2->3->4, reorder it to 1->4->2->3.  
-
-**Example 2:**  
-
-Given 1->2->3->4->5, reorder it to 1->5->2->4->3.    
+update version of 11. Container With Most Water  
 
 ## Ideas  
 **idea 1**   
-`iteration` (find mid,reverse the second half)   
-It is similar to [234. Palindrome Linked List ](https://github.com/JingRachaelZhu/CrackLeetcode/tree/JingRachaelZhu-patch-1/LinkedList/234.%20Palindrome%20Linked%20List) use fast/slow to find the mid node and reverse the second half of the list.Then, add nodes as the problem requests.   
+`two pointers`     
+In order to hole water ,we need 2 barriers and 1 smaller retangle in the middle .Solve it in a cumulative way. Keep track of the maximum height from both forward directions backward directions and the diff between shorter retangle and the crosponding `maxleft/maxright` is the subsum of water. 
+  
 
 **NOTICE**      
-* **Edge case**: when list id None or only have oneor two node,return    
-* **After finding mid node(`slow`)**:The `slow.next` will be the beginning of the `sec_half`.`slow` will be the last node of the result,so `slow.next` =`None`.           
+* **simplify the problem**:devide it into subpart to analyse.     
+* **Do we need the `=` in while statment?**: No. When left ==right,there is only 2 line left ,which can't hold water any more.No subsum need to be added to final result.        
 
 Time: O(n), Space: O(1)      
 
