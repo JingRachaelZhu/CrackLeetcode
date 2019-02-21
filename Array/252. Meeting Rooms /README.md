@@ -1,10 +1,11 @@
-# 164. Maximum Gap 
+# 252. Meeting Rooms    
 
   
 
 ## Ideas  
 **idea 1**   
-`Bucket sort` (linear time )    
+`sort` (intervals)  
+It is similiar to 56. Merge Intervals.
  
  
 
