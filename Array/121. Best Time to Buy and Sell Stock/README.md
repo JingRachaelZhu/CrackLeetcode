@@ -4,7 +4,9 @@
 **idea 1**   
 `Kadane's algorithm`卡登算法    
 **It is similar to `53. Maximum Subarray`. We need to find out the largest sum subarray to get the most profit.** 
-eg.To find most profit in {7,1,5,3,6,4} is the same as to find the largest sum subarray in {0,-6,4,-2,3,-2} the value is the diff of two contiguous values in former array.      
+eg.To find most profit in {7,1,5,3,6,4} is the same as to find the largest sum subarray in {0,-6,4,-2,3,-2} the value is the diff of two contiguous values in former array.    
+`Kadane's algorithm`:      
+In simple terms, it states that, the maximum sum sub-array ending with A[i], is either the element A[i] itself, or A[i] combined with the maximum sum sub-array ending with A[i – 1], whichever is the greater one.  
      
 
 **NOTICE**      

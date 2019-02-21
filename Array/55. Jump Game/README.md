@@ -1,4 +1,4 @@
-# 55. Jump Game     
+56. Merge Intervals# 55. Jump Game     
 
 ## Ideas  
 **idea 1**(move forward)         
