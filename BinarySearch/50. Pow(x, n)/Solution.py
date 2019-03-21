@@ -19,7 +19,7 @@ class Solution(object):
                 res =res *current
                 
             current *=current        # each value for next digit,start from x^0,x^2,x^4...
-            n =n/2
+            n =n/2                  #run at most n/2 steps
             
         
         return res

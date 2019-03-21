@@ -3,7 +3,7 @@
 
 ## Ideas  
 **idea**   
-`Expand Around Center`        
+`Dynamic Programming` (Expand Around Center)       
 Beacuse of the feature of palindrome, we could use a helper funtion `expandFromCenter` to compare each pair of words.   
 
 
